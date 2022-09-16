@@ -8,14 +8,14 @@ function getComputerChoice(arr) {
 }
 
 // define variables that will be used
-let playerSelection = "rock";
+let playerSelection = "";
 let computerSelection = getComputerChoice(choices);
 let playerScore = 0;
 let computerScore = 0;
 
 // add score element
 let score = document.querySelector(".playerScore");
-score.textContent = `Player Score: ${playerScore}`;
+score.textContent = `Player Score: ${playerScore} `;
 let compScore = document.querySelector(".computerScore");
 compScore.textContent = `Computer Score: ${computerScore}`;
 
@@ -24,7 +24,7 @@ display.textContent = `Nothing has been played yet`;
 
 // play a round
 function playRound(playerSelection, computerSelection) {
-    playerSelection = "rock";
+    playerSelection = playerSelection;
     computerSelection = getComputerChoice(choices);
 
     // scenarios
@@ -38,7 +38,7 @@ function playRound(playerSelection, computerSelection) {
         } else if (computerSelection == "scissors") {
             display.textContent=("you win, rock beats scissors");
             playerScore += 1;
-            score.textContent = `Player Score: ${playerScore}`;
+            score.textContent = `Player Score: ${playerScore} `;
         }
     } else if (playerSelection == "paper") {
         if (computerSelection == "scissors") {
@@ -48,7 +48,7 @@ function playRound(playerSelection, computerSelection) {
         } else if (computerSelection == "rock") {
             display.textContent=("you win, paper beats rock");
             playerScore += 1;
-            score.textContent = `Player Score: ${playerScore}`;
+            score.textContent = `Player Score: ${playerScore} `;
         }
     } else if (playerSelection == "scissors") {
         if (computerSelection == "rock") {
@@ -58,7 +58,7 @@ function playRound(playerSelection, computerSelection) {
         } else if (computerSelection == "paper") {
             display.textContent=("you win, scissors beats paper");
             playerScore += 1;
-            score.textContent = `Player Score: ${playerScore}`;
+            score.textContent = `Player Score: ${playerScore} `;
         }
     }
   }

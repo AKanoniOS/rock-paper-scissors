@@ -9,13 +9,15 @@
     
 </head>
 <body>
-    <div class="playerScore"></div>
-    <div class="computerScore"></div>
+    <div class="container">
+        <div class="playerScore"></div>
+        <div class="computerScore"></div>
+    </div>
     <div class="message"></div>
     <div class="buttons">
-        <button class="rock" onclick="playRound(playerSelection, computerSelection)">Rock</button>
-        <button class="paper">Paper</button>
-        <button class="scissors">Scissors</button>
+        <button class="rock" onclick="playRound('rock', computerSelection)">Rock</button>
+        <button class="paper" onclick="playRound('paper', computerSelection)">Paper</button>
+        <button class="scissors" onclick="playRound('scissors', computerSelection)">Scissors</button>
     </div>
     <script src="script.js"></script>
 </body>
