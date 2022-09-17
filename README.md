@@ -3,7 +3,7 @@
 This is my first project that brings together HTML, Javascript, and CSS. 
 So far, the game looks and acts very basic, but I've added some cool features and will continue to add more. 
 
-**live preview**
+**live preview -> ** https://htmlpreview.github.io/?https://github.com/AKanoniOS/rock-paper-scissors/blob/main/index.html
 
 ## First stage | Game in the browser console
 The benefits I got from this stage:
