@@ -3,6 +3,8 @@
 This is my first project that brings together HTML, Javascript, and CSS. 
 So far, the game looks and acts very basic, but I've added some cool features and will continue to add more. 
 
+**live preview**
+
 ## First stage | Game in the browser console
 The benefits I got from this stage:
 - Learned how to write functions and learned how to make them interact with each other
