@@ -10,14 +10,25 @@
 </head>
 <body>
     <div class="container">
-        <div class="playerScore"></div>
-        <div class="computerScore"></div>
-    </div>
-    <div class="message"></div>
-    <div class="buttons">
-        <button class="rock" onclick="playRound('rock', computerSelection)">Rock</button>
-        <button class="paper" onclick="playRound('paper', computerSelection)">Paper</button>
-        <button class="scissors" onclick="playRound('scissors', computerSelection)">Scissors</button>
+        <div class="playerEmojiBoxSingle">/</div>
+        <div class="box">
+            <div class="container">
+                <div class="playerScore"></div>
+                <div class="computerScore"></div>
+            </div>
+            <div class="message"></div>
+            <div class="round"></div>
+            <div class="buttons">
+                <button class="rock" onclick="playRound('rock', computerSelection)">Rock</button>
+                <button class="paper" onclick="playRound('paper', computerSelection)">Paper</button>
+                <button class="scissors" onclick="playRound('scissors', computerSelection)">Scissors</button>
+            </div>
+            <div class="emojiBoxes">
+                <div class="playerEmojiBox emojiBox"></div>
+                <div class="computerEmojiBox emojiBox"></div>
+            </div>
+        </div>
+        <div class="computerEmojiBoxSingle">/</div>
     </div>
     <script src="script.js"></script>
 </body>

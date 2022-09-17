@@ -12,6 +12,7 @@ let playerSelection = "";
 let computerSelection = getComputerChoice(choices);
 let playerScore = 0;
 let computerScore = 0;
+let roundCount = 0;
 
 // add score element
 let score = document.querySelector(".playerScore");
@@ -19,13 +20,47 @@ score.textContent = `Player Score: ${playerScore} `;
 let compScore = document.querySelector(".computerScore");
 compScore.textContent = `Computer Score: ${computerScore}`;
 
+// add message and round element counter
 let display = document.querySelector(".message");
 display.textContent = `Nothing has been played yet`;
+let round = document.querySelector(".round");
+round.textContent = `Round ${roundCount}`
+
+// add emoji display boxes
+let playerEmojiBox = document.querySelector(".playerEmojiBox");
+let computerEmojiBox = document.querySelector(".computerEmojiBox");
+let playerEmojiBoxSingle = document.querySelector(".playerEmojiBoxSingle");
+let computerEmojiBoxSingle = document.querySelector(".computerEmojiBoxSingle");
+
 
 // play a round
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection;
     computerSelection = getComputerChoice(choices);
+
+    // player weapon counter/display emoji boxes
+    if (playerSelection == "rock") {
+        playerEmojiBox.append("🪨");
+        playerEmojiBoxSingle.textContent=("🪨");
+    } else if (playerSelection == "paper") {
+        playerEmojiBox.append("📄");
+        playerEmojiBoxSingle.textContent=("📄");
+    } else {
+        playerEmojiBox.append("✂️");
+        playerEmojiBoxSingle.textContent=("✂️");
+    }
+
+    // computer weapon counter/display emoji boxes
+    if (computerSelection == "rock") {
+        computerEmojiBox.append("🪨");
+        computerEmojiBoxSingle.textContent=("🪨");
+    } else if (computerSelection == "paper") {
+        computerEmojiBox.append("📄");
+        computerEmojiBoxSingle.textContent=("📄");
+    } else {
+        computerEmojiBox.append("✂️");
+        computerEmojiBoxSingle.textContent=("✂️");
+    }
 
     // scenarios
     if (playerSelection == computerSelection) {
@@ -61,6 +96,11 @@ function playRound(playerSelection, computerSelection) {
             score.textContent = `Player Score: ${playerScore} `;
         }
     }
+
+    roundCount += 1;
+    round.textContent = `Round ${roundCount}`;
   }
 // console.log(playRound(playerSelection, computerSelection));
+
+
 
