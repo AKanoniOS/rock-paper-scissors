@@ -1,6 +1,15 @@
+body{
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(236,175,86,1) 100%);
+}
 .container{
     display: flex;
     justify-content: space-around;
+}
+.container-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .box {
@@ -17,11 +26,11 @@
 }
 
 .emojiBox {
-    border: solid blue;
+    border: dashed orange;
     border-radius: 10px;
-    min-width: 60px;
+    min-width: 53px;
     min-height:50px;
-    max-width: 60px;
+    max-width: 53px;
     margin: 5px;
 }
 

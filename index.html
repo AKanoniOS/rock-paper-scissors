@@ -9,23 +9,30 @@
     
 </head>
 <body>
-    <div class="container">
-        <div class="playerEmojiBoxSingle">/</div>
-        <div class="box">
-            <div class="container">
+    <div class="container-column">
+        <h1>Rock Paper Scissors</h1>
+        <div class="container">
+            <div class="container-column">
                 <div class="playerScore"></div>
+                <div class="playerEmojiBoxSingle">/</div>
+            </div>
+            <div class="container-column">
+                <div class="box">
+                    <div class="message"></div>
+                    <div class="round"></div>
+                    <div class="buttons">
+                        <button class="rock" onclick="playRound('rock', computerSelection)">Rock</button>
+                        <button class="paper" onclick="playRound('paper', computerSelection)">Paper</button>
+                        <button class="scissors" onclick="playRound('scissors', computerSelection)">Scissors</button>
+                    </div>
+                </div>
+                <div class="emojiBox"></div>
+            </div>
+            <div class="container-column">
                 <div class="computerScore"></div>
+                <div class="computerEmojiBoxSingle">/</div>
             </div>
-            <div class="message"></div>
-            <div class="round"></div>
-            <div class="buttons">
-                <button class="rock" onclick="playRound('rock', computerSelection)">Rock</button>
-                <button class="paper" onclick="playRound('paper', computerSelection)">Paper</button>
-                <button class="scissors" onclick="playRound('scissors', computerSelection)">Scissors</button>
-            </div>
-            <div class="emojiBox"></div>
         </div>
-        <div class="computerEmojiBoxSingle">/</div>
     </div>
     <script src="script.js"></script>
 </body>
