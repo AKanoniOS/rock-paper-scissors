@@ -19,16 +19,17 @@
 .emojiBox {
     border: solid blue;
     border-radius: 10px;
-    min-width: 50px;
-    min-height: 50px;
+    min-width: 60px;
+    min-height:50px;
+    max-width: 60px;
     margin: 5px;
 }
 
+/* old feature */
 .playerEmojiBoxSingle {
     display: flex;
     font-size: 200px;
 }
-
 .computerEmojiBoxSingle {
     display: flex;
     font-size: 200px;

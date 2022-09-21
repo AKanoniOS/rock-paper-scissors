@@ -12,7 +12,7 @@ let playerSelection = "";
 let computerSelection = getComputerChoice(choices);
 let playerScore = 0;
 let computerScore = 0;
-let roundCount = 0;
+let roundCount = 1;
 
 // add score element
 let score = document.querySelector(".playerScore");
@@ -26,12 +26,12 @@ display.textContent = `Nothing has been played yet`;
 let round = document.querySelector(".round");
 round.textContent = `Round ${roundCount}`
 
-// add emoji display boxes
-let playerEmojiBox = document.querySelector(".playerEmojiBox");
-let computerEmojiBox = document.querySelector(".computerEmojiBox");
+// add emoji display boxes - comment out old feature
+// let playerEmojiBox = document.querySelector(".playerEmojiBox");
+// let computerEmojiBox = document.querySelector(".computerEmojiBox");
 let playerEmojiBoxSingle = document.querySelector(".playerEmojiBoxSingle");
 let computerEmojiBoxSingle = document.querySelector(".computerEmojiBoxSingle");
-
+let emojiBox = document.querySelector(".emojiBox");
 
 // play a round
 function playRound(playerSelection, computerSelection) {
@@ -40,25 +40,25 @@ function playRound(playerSelection, computerSelection) {
 
     // player weapon counter/display emoji boxes
     if (playerSelection == "rock") {
-        playerEmojiBox.append("🪨");
+        emojiBox.append(`🪨`);
         playerEmojiBoxSingle.textContent=("🪨");
     } else if (playerSelection == "paper") {
-        playerEmojiBox.append("📄");
+        emojiBox.append(`📄`);
         playerEmojiBoxSingle.textContent=("📄");
     } else {
-        playerEmojiBox.append("✂️");
+        emojiBox.append(`✂️`);
         playerEmojiBoxSingle.textContent=("✂️");
     }
 
     // computer weapon counter/display emoji boxes
     if (computerSelection == "rock") {
-        computerEmojiBox.append("🪨");
+        emojiBox.append("⚔️🪨");
         computerEmojiBoxSingle.textContent=("🪨");
     } else if (computerSelection == "paper") {
-        computerEmojiBox.append("📄");
+        emojiBox.append("⚔️📄");
         computerEmojiBoxSingle.textContent=("📄");
     } else {
-        computerEmojiBox.append("✂️");
+        emojiBox.append("⚔️✂️");
         computerEmojiBoxSingle.textContent=("✂️");
     }
 
