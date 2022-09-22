@@ -61,18 +61,8 @@ function displayComputerWeapon(input){
     }
 }
 
-// play a round
-function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection;
-    computerSelection = getComputerChoice(choices);
-
-    // player weapon counter/display emoji boxes
-    displayPlayerWeapon(playerSelection);
-
-    // computer weapon counter/display emoji boxes
-    displayComputerWeapon(computerSelection);
-
-    // main logic - scenarios
+//function to determine the main logic - win/lose scenarios
+function getWinnerLoser(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
         display.textContent=(`You both played ${playerSelection}`);
     } else if (playerSelection == "rock") {
@@ -106,6 +96,21 @@ function playRound(playerSelection, computerSelection) {
             score.textContent = `Player Score: ${playerScore} `;
         }
     }
+}
+
+// play a round
+function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection;
+    computerSelection = getComputerChoice(choices);
+
+    // player weapon counter/display emoji boxes
+    displayPlayerWeapon(playerSelection);
+
+    // computer weapon counter/display emoji boxes
+    displayComputerWeapon(computerSelection);
+
+    // main logic - scenarios
+    getWinnerLoser(playerSelection, computerSelection);
 
     roundCount += 1;
     round.textContent = `Round ${roundCount}`;
