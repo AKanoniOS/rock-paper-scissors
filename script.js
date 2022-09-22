@@ -33,22 +33,27 @@ let playerEmojiBoxSingle = document.querySelector(".playerEmojiBoxSingle");
 let computerEmojiBoxSingle = document.querySelector(".computerEmojiBoxSingle");
 let emojiBox = document.querySelector(".emojiBox");
 
-// play a round
-function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection;
-    computerSelection = getComputerChoice(choices);
-
-    // player weapon counter/display emoji boxes
-    if (playerSelection == "rock") {
+//function to display player weapon display
+function displayPlayerWeapon(input){
+    if (input == "rock") {
         emojiBox.append(`🪨`);
         playerEmojiBoxSingle.textContent=("🪨");
-    } else if (playerSelection == "paper") {
+    } else if (input == "paper") {
         emojiBox.append(`📄`);
         playerEmojiBoxSingle.textContent=("📄");
     } else {
         emojiBox.append(`✂️`);
         playerEmojiBoxSingle.textContent=("✂️");
     }
+}
+
+// play a round
+function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection;
+    computerSelection = getComputerChoice(choices);
+
+    // player weapon counter/display emoji boxes
+    displayPlayerWeapon(playerSelection);
 
     // computer weapon counter/display emoji boxes
     if (computerSelection == "rock") {
@@ -62,7 +67,7 @@ function playRound(playerSelection, computerSelection) {
         computerEmojiBoxSingle.textContent=("✂️");
     }
 
-    // scenarios
+    // main logic - scenarios
     if (playerSelection == computerSelection) {
         display.textContent=(`You both played ${playerSelection}`);
     } else if (playerSelection == "rock") {
