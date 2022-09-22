@@ -47,6 +47,20 @@ function displayPlayerWeapon(input){
     }
 }
 
+//function to display computer weapon display
+function displayComputerWeapon(input){
+    if (input == "rock") {
+        emojiBox.append("⚔️🪨");
+        computerEmojiBoxSingle.textContent=("🪨");
+    } else if (input == "paper") {
+        emojiBox.append("⚔️📄");
+        computerEmojiBoxSingle.textContent=("📄");
+    } else {
+        emojiBox.append("⚔️✂️");
+        computerEmojiBoxSingle.textContent=("✂️");
+    }
+}
+
 // play a round
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection;
@@ -56,16 +70,7 @@ function playRound(playerSelection, computerSelection) {
     displayPlayerWeapon(playerSelection);
 
     // computer weapon counter/display emoji boxes
-    if (computerSelection == "rock") {
-        emojiBox.append("⚔️🪨");
-        computerEmojiBoxSingle.textContent=("🪨");
-    } else if (computerSelection == "paper") {
-        emojiBox.append("⚔️📄");
-        computerEmojiBoxSingle.textContent=("📄");
-    } else {
-        emojiBox.append("⚔️✂️");
-        computerEmojiBoxSingle.textContent=("✂️");
-    }
+    displayComputerWeapon(computerSelection);
 
     // main logic - scenarios
     if (playerSelection == computerSelection) {
