@@ -7,9 +7,69 @@
     <title>Document</title>
 </head>
 <body>
-    <button>Run Scenario</button>
-    <script>
+    <button onclick="runScenario('rock',10)">Run Rock Scenario 10 Times</button>
+    <button onclick="testDisplay()">test display</button>
+    <div class="scenario-display"></div>
 
+    <script>
+        let scenarioDisplay = document.querySelector(".scenario-display");
+
+        function testDisplay() {
+            scenarioDisplay.textContent = `successful display change`;
+        }
+
+        let choices = ["rock","paper","scissors"];
+        // select random weapon for computer
+        function getScenarioComputerChoice(arr) {
+            let choice = arr[Math.floor(Math.random()*arr.length)];
+            return choice;
+        }
+
+        let scenarioComputerScore = 0;
+        let scenarioPlayerScore = 0;
+        let scenarioPlayerSelection = "";
+        let scenarioComputerSelection = getScenarioComputerChoice(choices);
+
+        let scenarioPlayerWeapon = "";
+        
+        //function to determine the main logic - win/lose scenarios
+        function getScenarioWinnerLoser(scenarioPlayerSelection, scenarioComputerSelection) {
+            if (scenarioPlayerSelection == scenarioComputerSelection) {
+                return;
+            } else if (scenarioPlayerSelection == "rock") {
+                if (scenarioComputerSelection == "paper") {
+                    scenarioComputerScore += 1;
+                } else if (scenarioComputerSelection == "scissors") {
+                    scenarioPlayerScore += 1;
+                }
+            } else if (scenarioPlayerSelection == "paper") {
+                if (scenarioComputerSelection == "scissors") {
+                    scenarioComputerScore += 1;
+                } else if (scenarioComputerSelection == "rock") {
+                    scenarioPlayerScore += 1;
+                }
+            } else if (scenarioPlayerSelection == "scissors") {
+                if (scenarioComputerSelection == "rock") {
+                    scenarioComputerScore += 1;
+                } else if (scenarioComputerSelection == "paper") {
+                    scenarioPlayerScore += 1;
+                }
+            }
+        }
+
+        function runScenario(scenarioPlayerWeapon, scenarioCount) {
+            for (let i=0; i<scenarioCount; i++) {
+                getScenarioWinnerLoser(scenarioPlayerWeapon, scenarioComputerSelection);
+                //reset computer weapon
+                scenarioComputerSelection = getScenarioComputerChoice(choices)
+            }
+            scenarioDisplay.textContent = `You won ${scenarioPlayerScore} times out of ${scenarioCount} times.`;
+            //reset scores
+            scenarioPlayerScore = 0;
+            scenarioComputerScore = 0;
+        }
+
+        
     </script>
 </body>
 </html>
