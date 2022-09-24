@@ -33,6 +33,8 @@ let playerEmojiBoxSingle = document.querySelector(".playerEmojiBoxSingle");
 let computerEmojiBoxSingle = document.querySelector(".computerEmojiBoxSingle");
 let emojiBox = document.querySelector(".emojiBox");
 
+const emojiBoxArray = []
+
 //function to display player weapon display
 function displayPlayerWeapon(input){
     if (input == "rock") {
