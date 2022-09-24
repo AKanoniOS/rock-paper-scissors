@@ -29,6 +29,8 @@ body{
 }
 
 .emojiBox {
+    display: flex;
+    flex-direction: column;
     border: dashed orange;
     border-radius: 10px;
     min-width: 53px;

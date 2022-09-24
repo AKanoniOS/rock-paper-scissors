@@ -19,14 +19,14 @@
             <div class="container-column">
                 <div class="box">
                     <div class="message"></div>
-                    <div class="round"></div>
+                    <div class="roundCountDisplay"></div>
                     <div class="buttons">
-                        <button class="rock" onclick="playRound('rock', computerSelection)">Rock</button>
-                        <button class="paper" onclick="playRound('paper', computerSelection)">Paper</button>
-                        <button class="scissors" onclick="playRound('scissors', computerSelection)">Scissors</button>
+                        <button class="rock" onclick="addRoundCount(); playRound('rock', computerSelection)">Rock</button>
+                        <button class="paper" onclick="addRoundCount(); playRound('paper', computerSelection)">Paper</button>
+                        <button class="scissors" onclick="addRoundCount(); playRound('scissors', computerSelection)">Scissors</button>
                     </div>
                 </div>
-                <div class="emojiBox"></div>
+                <div class="emoji-display-box emojiBox"></div>
             </div>
             <div class="container-column">
                 <div class="computerScore"></div>

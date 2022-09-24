@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="addRoundCount(); emojiDisplayBoxFunction(`🪨`,`📄`)">Rock</button>
+
+    <div class="roundCountDisplay">0</div>
+    <div class="emoji-display-box"></div>
+    
+    <script>
+        let roundCount = 0;
+        let roundCountDisplay = document.querySelector(".roundCountDisplay");
+
+        function addRoundCount(){
+            roundCount +=1; 
+            roundCountDisplay.textContent = `round ${roundCount}`;
+        }
+
+        let emojiDisplayArray = [];
+        let emojiDisplayBox = document.querySelector(".emoji-display-box");
+
+        function emojiDisplayBoxFunction (playerSelection, computerSelection) {
+            if (emojiDisplayArray.length < 10) {
+                emojiDisplayArray.unshift(roundCount+playerSelection+`⚔️`+computerSelection);
+                emojiDisplayBox.textContent = emojiDisplayArray;
+            } else {
+                emojiDisplayArray.unshift(roundCount+playerSelection+`⚔️`+computerSelection);
+                emojiDisplayArray.pop()
+                emojiDisplayBox.textContent = emojiDisplayArray;
+            }
+        }
+    </script>
+</body>
+</html>

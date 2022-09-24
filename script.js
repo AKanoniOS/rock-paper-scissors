@@ -1,3 +1,12 @@
+/*
+███╗░░░███╗░█████╗░██╗███╗░░██╗  ░██████╗░░█████╗░███╗░░░███╗███████╗  ░█████╗░░█████╗░██████╗░███████╗
+████╗░████║██╔══██╗██║████╗░██║  ██╔════╝░██╔══██╗████╗░████║██╔════╝  ██╔══██╗██╔══██╗██╔══██╗██╔════╝
+██╔████╔██║███████║██║██╔██╗██║  ██║░░██╗░███████║██╔████╔██║█████╗░░  ██║░░╚═╝██║░░██║██║░░██║█████╗░░
+██║╚██╔╝██║██╔══██║██║██║╚████║  ██║░░╚██╗██╔══██║██║╚██╔╝██║██╔══╝░░  ██║░░██╗██║░░██║██║░░██║██╔══╝░░
+██║░╚═╝░██║██║░░██║██║██║░╚███║  ╚██████╔╝██║░░██║██║░╚═╝░██║███████╗  ╚█████╔╝╚█████╔╝██████╔╝███████╗
+╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝╚═╝░░╚══╝  ░╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝  ░╚════╝░░╚════╝░╚═════╝░╚══════╝
+*/
+
 // define weapons of choice
 let choices = ["rock","paper","scissors"];
 
@@ -12,7 +21,8 @@ let playerSelection = "";
 let computerSelection = getComputerChoice(choices);
 let playerScore = 0;
 let computerScore = 0;
-let roundCount = 1;
+
+let roundCount = 0;
 
 // add score element
 let score = document.querySelector(".playerScore");
@@ -23,8 +33,7 @@ compScore.textContent = `Computer Score: ${computerScore}`;
 // add message and round element counter
 let display = document.querySelector(".message");
 display.textContent = `Nothing has been played yet`;
-let round = document.querySelector(".round");
-round.textContent = `Round ${roundCount}`
+
 
 // add emoji display boxes - comment out old feature
 // let playerEmojiBox = document.querySelector(".playerEmojiBox");
@@ -38,13 +47,10 @@ const emojiBoxArray = []
 //function to display player weapon display
 function displayPlayerWeapon(input){
     if (input == "rock") {
-        emojiBox.append(`🪨`);
         playerEmojiBoxSingle.textContent=("🪨");
     } else if (input == "paper") {
-        emojiBox.append(`📄`);
         playerEmojiBoxSingle.textContent=("📄");
     } else {
-        emojiBox.append(`✂️`);
         playerEmojiBoxSingle.textContent=("✂️");
     }
 }
@@ -52,13 +58,10 @@ function displayPlayerWeapon(input){
 //function to display computer weapon display
 function displayComputerWeapon(input){
     if (input == "rock") {
-        emojiBox.append("⚔️🪨");
         computerEmojiBoxSingle.textContent=("🪨");
     } else if (input == "paper") {
-        emojiBox.append("⚔️📄");
         computerEmojiBoxSingle.textContent=("📄");
     } else {
-        emojiBox.append("⚔️✂️");
         computerEmojiBoxSingle.textContent=("✂️");
     }
 }
@@ -104,7 +107,7 @@ function getWinnerLoser(playerSelection, computerSelection) {
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection;
     computerSelection = getComputerChoice(choices);
-
+    emojiDisplayBoxFunction(playerSelection,computerSelection);
     // player weapon counter/display emoji boxes
     displayPlayerWeapon(playerSelection);
 
@@ -113,11 +116,47 @@ function playRound(playerSelection, computerSelection) {
 
     // main logic - scenarios
     getWinnerLoser(playerSelection, computerSelection);
-
-    roundCount += 1;
+    
     round.textContent = `Round ${roundCount}`;
   }
 // console.log(playRound(playerSelection, computerSelection));
 
 
 
+/*
+███████╗███╗░░░███╗░█████╗░░░░░░██╗██╗  ██████╗░██╗░██████╗██████╗░██╗░░░░░░█████╗░██╗░░░██╗
+██╔════╝████╗░████║██╔══██╗░░░░░██║██║  ██╔══██╗██║██╔════╝██╔══██╗██║░░░░░██╔══██╗╚██╗░██╔╝
+█████╗░░██╔████╔██║██║░░██║░░░░░██║██║  ██║░░██║██║╚█████╗░██████╔╝██║░░░░░███████║░╚████╔╝░
+██╔══╝░░██║╚██╔╝██║██║░░██║██╗░░██║██║  ██║░░██║██║░╚═══██╗██╔═══╝░██║░░░░░██╔══██║░░╚██╔╝░░
+███████╗██║░╚═╝░██║╚█████╔╝╚█████╔╝██║  ██████╔╝██║██████╔╝██║░░░░░███████╗██║░░██║░░░██║░░░
+╚══════╝╚═╝░░░░░╚═╝░╚════╝░░╚════╝░╚═╝  ╚═════╝░╚═╝╚═════╝░╚═╝░░░░░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░
+
+██████╗░░█████╗░██╗░░██╗
+██╔══██╗██╔══██╗╚██╗██╔╝
+██████╦╝██║░░██║░╚███╔╝░
+██╔══██╗██║░░██║░██╔██╗░
+██████╦╝╚█████╔╝██╔╝╚██╗
+╚═════╝░░╚════╝░╚═╝░░╚═╝
+*/
+
+
+let roundCountDisplay = document.querySelector(".roundCountDisplay");
+
+function addRoundCount(){
+    roundCount +=1; 
+    roundCountDisplay.textContent = `round ${roundCount}`;
+}
+
+let emojiDisplayArray = [];
+let emojiDisplayBox = document.querySelector(".emoji-display-box");
+
+function emojiDisplayBoxFunction (playerSelection, computerSelection) {
+    if (emojiDisplayArray.length < 10) {
+        emojiDisplayArray.unshift(roundCount+playerSelection+`⚔️`+computerSelection);
+        emojiDisplayBox.textContent = emojiDisplayArray;
+    } else {
+        emojiDisplayArray.unshift(roundCount+playerSelection+`⚔️`+computerSelection);
+        emojiDisplayArray.pop()
+        emojiDisplayBox.textContent = emojiDisplayArray;
+    }
+}
