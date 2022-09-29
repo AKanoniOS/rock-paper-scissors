@@ -152,11 +152,11 @@ let emojiDisplayBox = document.querySelector(".emoji-display-box");
 
 function emojiDisplayBoxFunction (playerSelection, computerSelection) {
     if (emojiDisplayArray.length < 10) {
-        emojiDisplayArray.unshift(roundCount+playerSelection+`⚔️`+computerSelection);
+        emojiDisplayArray.unshift(roundCount+playerSelection+`⚔️`+computerSelection+"\n");
         emojiDisplayBox.textContent = emojiDisplayArray;
     } else {
-        emojiDisplayArray.unshift(roundCount+playerSelection+`⚔️`+computerSelection);
-        emojiDisplayArray.pop()
+        emojiDisplayArray.unshift(roundCount+playerSelection+`⚔️`+computerSelection+"\n");
+        emojiDisplayArray.pop();
         emojiDisplayBox.textContent = emojiDisplayArray;
     }
 }
