@@ -5,7 +5,7 @@ So far, the game looks and acts very basic, but I've added some cool features an
 
 **live preview -> ** https://htmlpreview.github.io/?https://github.com/AKanoniOS/rock-paper-scissors/blob/main/index.html
 
-## First stage | Game in the browser console
+## First stage
 The benefits I got from this stage:
 - Learned how to write functions and learned how to make them interact with each other
 
